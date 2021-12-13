@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>TODO</title>
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="headers.css" th:src="@{/css/headers.css}" rel="stylesheet">
+	<link href="starter-template.css" th:href="@{/css/starter-template.css}" rel="stylesheet">
+</head>
+
+  <body>
+	<div th:replace="~{block/header::header_gaya}"></div>
+
+
+
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+  </body>
+</html>

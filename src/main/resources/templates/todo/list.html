@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>TODO</title>
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="headers.css" th:src="@{/css/headers.css}" rel="stylesheet">
+	<link href="starter-template.css" th:href="@{/css/starter-template.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:replace="~{block/header::header_gaya}"></div>
+	<main role="main" class="container">
+
+	<div class="starter-template">
+		<h1>TODOリスト</h1>
+		<p class="lead">TODO登録、更新、削除</p>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">id</th>
+				<th scope="col">contents</th>
+				<th scope="col">deadline</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="list : ${lists}">
+				<td scope="row" th:text="${list.id}">id</td>
+				<td th:text="${list.contents}">contents</td>
+				<td th:text="${list.deadline}">deadline</td>
+			</tr>
+		</tbody>
+	</table>
+
+	</main>
+
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
