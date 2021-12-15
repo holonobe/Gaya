@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.app.todo.TaskForm;
 import com.example.demo.entity.Task;
 
 @Repository
@@ -38,6 +39,17 @@ public class TaskRepositoryImpl implements TaskRepository {
 			list.add(task);
 		}
 		return list;
+
+	}
+
+	@Override
+	public int insert(TaskForm taskForm) {
+
+		String sql = "INSERT INTO task(contents,deadline) value (?,?)";
+
+		int result = jdbcTemplate.update(sql, taskForm.getContents(), taskForm.getDeadline());
+
+		return result;
 
 	}
 

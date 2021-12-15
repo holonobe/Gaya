@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.app.todo.TaskForm;
 import com.example.demo.entity.Task;
 import com.example.demo.repository.TaskRepository;
 
@@ -33,6 +34,16 @@ public class TaskServiceImpl implements TaskService {
 		List<Task> list = repository.findAll();
 
 		return list;
+	}
+
+	@Override
+	public void insert(TaskForm taskForm) {
+
+		int result = repository.insert(taskForm);
+
+		if (result == 0) {
+			throw new RuntimeException("作成失敗");
+		}
 	}
 
 }

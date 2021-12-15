@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import com.example.demo.app.todo.TaskForm;
 import com.example.demo.entity.Task;
 
 public interface TaskService {
@@ -10,7 +11,7 @@ public interface TaskService {
 
 //	Optional<Task> getTask(int id);
 //
-//	void insert(Task task);
+	void insert(TaskForm taskForm);
 //
 //	void update(Task task);
 //

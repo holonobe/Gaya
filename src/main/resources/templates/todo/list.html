@@ -26,6 +26,16 @@
 		<p class="lead">TODO登録、更新、削除</p>
 	</div>
 
+	<form method="POST" th:action="@{/gaya/todo/insert}" th:object="${taskForm}">
+		<div th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>
+		<div th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></div>
+		<label>タスク：</label>
+		<input type="text" name="contents" th:value="*{contents}" />
+		<label>期日：</label>
+		<input type="datetime-local" name="deadline" th:value="*{deadline}" />
+		<input type="submit" value="追加">
+	</form>
+
 	<table class="table">
 		<thead>
 			<tr>
